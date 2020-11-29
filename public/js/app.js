@@ -27,9 +27,9 @@ weather.addEventListener('submit',(e)=>{
             // console.log(data)
             msg.textContent=data[0].place
             msg2.textContent=data[0].description
-            console.log(data)
-            console.log(data[0] .place)
-            console.log(data[0].currentTempature)
+            // console.log(data)
+            // console.log(data[0] .place)
+            // console.log(data[0].currentTempature)
 
         }
 
