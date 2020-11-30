@@ -55,14 +55,16 @@ app.get('/weather',(req,res)=>{
     }
     
     const loc= req.query.address
-    geocode(loc,(error,{latitude:lat,longitude:long}={})=>{
+    geocode(loc,(error,{latitude:lat,longitude:long,placename}={})=>{
         if(error){
             return res.send({
                 error
             })
         }
         // const {latitude:lat,longitude:long} =data 
-        weatherRequest(lat,long,(error,{location,weateherdesc,currenttemp,feelslike})=>{
+        console.log(lat)
+        console.log(long)
+        weatherRequest(lat,long,(error,{weateherdesc,currenttemp,feelslike})=>{
 
             if(error){  
                return res.send({
@@ -70,7 +72,7 @@ app.get('/weather',(req,res)=>{
                 })
             }
             res.send([{
-                place:location,
+                place:placename,
                 description:weateherdesc,
                 currentTempature:currenttemp,
                 feelslike:feelslike
