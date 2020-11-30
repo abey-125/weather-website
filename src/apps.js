@@ -12,6 +12,7 @@ const partialspath = path.join(__dirname,'../templates/partials')
 
 const app=express()
 const port = process.env.PORT || 3000
+//this is for heroku to set the port once heroku set the env variable with the port number we will retrive it and start listening to that port
 
 app.set('view engine','hbs')
 app.set('views',viewpath)
