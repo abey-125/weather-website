@@ -16,7 +16,7 @@ weather.addEventListener('submit',(e)=>{
     console.log(loc)
     msg.textContent=''
     msg2.textContent=''
-    fetch('http://localhost:3000/weather?address='+loc).then((response) =>{
+    fetch('/weather?address='+loc).then((response) =>{
     response.json().then((data) => {
         if(data.error){
             msg.textContent=data.error
